@@ -75,9 +75,11 @@
         \caption{Isto é um plot.}\label{fig:figure}
     \end{figure}
 
+    \newpage
+
     Aqui está uma subfigura:
 
-    \begin{figure}
+    \begin{figure}[htb!]
         \centering
         \begin{subfigure}[b]{0.45\textwidth}
              \centering
@@ -98,8 +100,6 @@
 
     A Figura~\ref{fig:twographs} é composta por duas subfiguras, a Figura~\ref{fig:three sin x} e a Figura~\ref{fig:five over x}.
 
-    \pagebreak
-
     \section{Método}\label{sec:metodo}
 
     \lipsum[6-7]
@@ -108,10 +108,31 @@
 
     Isto é um novo parágrafo, aqui iremos ver como controlar as versões dos documentos utilizando Git e iremos sincronizar este controlo de versões com o github.
 
-    \subsection{Github}\label{sec_github}
+    \subsection{Github}\label{subsec:github}
 
     Aqui submetemos tudo para o Github.
 
+    \section{Equações}
+
+    Com o \LaTeX é muito fácil escrever equações, numerá-las e referênciá-las com uma facilidade enorme.
+    Aqui está um exemplo de uma equação não numerada:
+    \[
+        \phi(1) * \phi(2) = \Phi(f) = \int_{-\infty}^{+\infty}  \phi(t) + \phi(t+\tau) \cdot d\tau
+    \]
+
+    Aqui está o exemplo de uma equação numerada:
+    \begin{equation}\label{eq:num-dist}
+        N_g[\phi(t)] = \int_{-\infty}^{+\infty} g(t) \cdot \phi(t) \cdot dt
+    \end{equation}
+
+    Outro exemplo de uma equação com \emph{brackets}:
+    \begin{equation}\label{eq:classe-c}
+        \phi(t) \in C \, \text{ se } \,
+        \begin{cases}
+            \exists \phi^{(n)} (t) & \forall t,n \\
+            \lim_{t \rightarrow +\infty} \left[t^n \cdot \phi(t)\right] = 0
+        \end{cases}
+    \end{equation}
 %    \bibliography{main}
 %    \bibliographystyle{plain}
 
