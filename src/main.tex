@@ -8,6 +8,8 @@
 
 % Packages
 \usepackage{amsmath}
+\usepackage{siunitx}
+\sisetup{locale = DE, per-mode = symbol, range-phrase=--, range-units=single, product-units=single}
 \usepackage{graphicx, subcaption}
 \usepackage[margin=1in]{geometry}
 \usepackage{indentfirst}
@@ -19,6 +21,7 @@
 \usepackage{booktabs}
 \usepackage{lipsum}
 \usepackage{wrapfig2}
+\usepackage{amssymb}
 
 \author[1]{João Sá Pereira}
 \author[2]{Vasco Reis}
@@ -112,9 +115,9 @@
 
     Aqui submetemos tudo para o Github.
 
-    \section{Equações}
+    \section{Equações}\label{sec:equacoes}
 
-    Com o \LaTeX é muito fácil escrever equações, numerá-las e referênciá-las com uma facilidade enorme.
+    Com o \LaTeXé muito fácil escrever equações, numerá-las e referênciá-las com uma facilidade enorme.
     Aqui está um exemplo de uma equação não numerada:
     \[
         \phi(1) * \phi(2) = \Phi(f) = \int_{-\infty}^{+\infty}  \phi(t) + \phi(t+\tau) \cdot d\tau
@@ -133,6 +136,37 @@
             \lim_{t \rightarrow +\infty} \left[t^n \cdot \phi(t)\right] = 0
         \end{cases}
     \end{equation}
+
+    \subsection*{Unidades}
+
+    \unit{\m\candela} \par
+    \unit{kg.m.s^{-1}} \par
+    \unit{\kilogram\metre\per\second} \par
+    \unit{\kg\m\per\s} \par
+    \unit[per-mode = symbol]{\kilogram\metre\per\ampere\per\second}\par
+    \unit{\kilo\gram\metre\per\square\second} \par
+    \unit[per-mode = symbol]{\gram\per\cubic\milli\metre} \par
+    \unit{\square\volt\cubic\lumen\per\farad} \par
+    \unit{\metre\squared\per\cubic\lux} \par
+    \unit{\henry\second}
+
+    \subsection*{Números com Unidades}
+
+    \qty{10}{\celsius} \par
+    \qty{10}{\degreeCelsius} \par
+    \qty{1.23}{J.mol^{-1}.K^{-1}} \par
+    \qty{.23e7}{\candela} \par
+    \qty[per-mode = symbol]{1.99}{\per\kilogram} \par
+    \qty[per-mode = fraction]{1,345}{\coulomb\per\mole}
+
+    \subsubsection*{Additional macros for numbers with units}
+
+    \qtylist{0.13;0.67;0.80;1}{\milli\metre}\par
+    \numproduct{1.654 x 2.34 x 3.430} \par
+    \qtyproduct{10 x 30 x 45}{\metre} \par
+    \numrange{10}{20} \par
+    \numrange[range-phrase=--]{10}{20} \par
+    \qtyrange{0.13}{0.67}{\milli\metre} \par
 %    \bibliography{main}
 %    \bibliographystyle{plain}
 
