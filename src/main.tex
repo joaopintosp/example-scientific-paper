@@ -22,6 +22,17 @@
 \usepackage{lipsum}
 \usepackage{wrapfig2}
 \usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[capitalise, noabbrev, nameinlink]{cleveref}
+\Crefname{figure}{Figura}{Figuras}
+\Crefname{equation}{Equação}{Equações}
+\Crefname{table}{Tabela}{Tabelas}
+\Crefname{section}{Secção}{Secções}
+
+\usepackage[printonlyused]{acronym}
+\usepackage[style=apa]{biblatex}
+\addbibresource{main.bib}
 
 \author[1]{João Sá Pereira}
 \author[2]{Vasco Reis}
@@ -36,138 +47,21 @@
 
     \maketitle
     \tableofcontents
-    \listoffigures
-    \listoftables
-    \section{Introdução}\label{sec:introducao}
+%    \listoffigures
+%    \listoftables
+    \section*{Nomenclature}
+%    \renewcommand{\baselinestretch}{0.75}\normalsize
+        \begin{acronym}[longest]
+        \acro{HTML}{Hypertext Markup Language}
+        \acro{t}[$t_{db}$]{dry-bulb temperature \acroextra{[°C]}}
+        \end{acronym}
+%    \renewcommand{\baselinestretch}{1}\normalsize
 
-    \lipsum[1]
+    \input{sections/introduction}
+    \input{sections/methods}
+    %\input{sections/results}
 
-    \subsection{Motivo}\label{subsec:motivo}
+    \printbibliography
 
-    Isto é apenas uma introdução para ver se gosto ou não de utilizar o Pycharm com\LaTeX.
-    Pode ser que se torne a minha nova ferramenta de trabalho, sendo que em 2025 começarei a minha dissertação de mestrado.
-    \lipsum[1]
-
-    \subsection{Ortografia}\label{subsec:ortografia}
-
-    Será que o Pycharm corrige a ortografia?
-    Pelos vistos, sim!
-    O Pycharm corrige a ortografia.
-    \lipsum[2]
-
-    \paragraph{Parágrafo da Introdução} \lipsum[3]
-    
-    \subsection{Figuras e Tabelas}\label{subsec:figuras-e-tabelas}
-
-    Aqui está uma tabela:
-
-    \begin{table}[htb!]
-        \centering
-        \input{tables/people}
-        \caption{Uma tabela.}\label{tab:tabela}
-    \end{table}
-
-    Write some text.
-    Como mostrado na Tabela~\ref{tab:tabela}. \lipsum[5]
-
-    Aqui está uma figura.
-    Esta é a Figura~\ref{fig:figure}:
-    \begin{figure}[htb!]
-        \centering
-        \includegraphics[width=0.5\textwidth]{figures/figure}
-        \caption{Isto é um plot.}\label{fig:figure}
-    \end{figure}
-
-    \newpage
-
-    Aqui está uma subfigura:
-
-    \begin{figure}[htb!]
-        \centering
-        \begin{subfigure}[b]{0.45\textwidth}
-             \centering
-             \includegraphics[width=\textwidth]{figures/figure}
-             \caption{$y=3\sin x$}
-             \label{fig:three sin x}
-         \end{subfigure}
-         \hfill
-         \begin{subfigure}[b]{0.45\textwidth}
-             \centering
-             \includegraphics[width=\textwidth]{figures/flores}
-             \caption{$y=5/x$}
-             \label{fig:five over x}
-         \end{subfigure}
-            \caption{Duas simples figuras.}
-            \label{fig:twographs}
-    \end{figure}
-
-    A Figura~\ref{fig:twographs} é composta por duas subfiguras, a Figura~\ref{fig:three sin x} e a Figura~\ref{fig:five over x}.
-
-    \section{Método}\label{sec:metodo}
-
-    \lipsum[6-7]
-
-    \section{Git e GitHub}\label{sec:outrometodo}
-
-    Isto é um novo parágrafo, aqui iremos ver como controlar as versões dos documentos utilizando Git e iremos sincronizar este controlo de versões com o github.
-
-    \subsection{Github}\label{subsec:github}
-
-    Aqui submetemos tudo para o Github.
-
-    \section{Equações}\label{sec:equacoes}
-
-    Com o \LaTeXé muito fácil escrever equações, numerá-las e referênciá-las com uma facilidade enorme.
-    Aqui está um exemplo de uma equação não numerada:
-    \[
-        \phi(1) * \phi(2) = \Phi(f) = \int_{-\infty}^{+\infty}  \phi(t) + \phi(t+\tau) \cdot d\tau
-    \]
-
-    Aqui está o exemplo de uma equação numerada:
-    \begin{equation}\label{eq:num-dist}
-        N_g[\phi(t)] = \int_{-\infty}^{+\infty} g(t) \cdot \phi(t) \cdot dt
-    \end{equation}
-
-    Outro exemplo de uma equação com \emph{brackets}:
-    \begin{equation}\label{eq:classe-c}
-        \phi(t) \in C \, \text{ se } \,
-        \begin{cases}
-            \exists \phi^{(n)} (t) & \forall t,n \\
-            \lim_{t \rightarrow +\infty} \left[t^n \cdot \phi(t)\right] = 0
-        \end{cases}
-    \end{equation}
-
-    \subsection*{Unidades}
-
-    \unit{\m\candela} \par
-    \unit{kg.m.s^{-1}} \par
-    \unit{\kilogram\metre\per\second} \par
-    \unit{\kg\m\per\s} \par
-    \unit[per-mode = symbol]{\kilogram\metre\per\ampere\per\second}\par
-    \unit{\kilo\gram\metre\per\square\second} \par
-    \unit[per-mode = symbol]{\gram\per\cubic\milli\metre} \par
-    \unit{\square\volt\cubic\lumen\per\farad} \par
-    \unit{\metre\squared\per\cubic\lux} \par
-    \unit{\henry\second}
-
-    \subsection*{Números com Unidades}
-
-    \qty{10}{\celsius} \par
-    \qty{10}{\degreeCelsius} \par
-    \qty{1.23}{J.mol^{-1}.K^{-1}} \par
-    \qty{.23e7}{\candela} \par
-    \qty[per-mode = symbol]{1.99}{\per\kilogram} \par
-    \qty[per-mode = fraction]{1,345}{\coulomb\per\mole}
-
-    \subsubsection*{Additional macros for numbers with units}
-
-    \qtylist{0.13;0.67;0.80;1}{\milli\metre}\par
-    \numproduct{1.654 x 2.34 x 3.430} \par
-    \qtyproduct{10 x 30 x 45}{\metre} \par
-    \numrange{10}{20} \par
-    \numrange[range-phrase=--]{10}{20} \par
-    \qtyrange{0.13}{0.67}{\milli\metre} \par
-%    \bibliography{main}
-%    \bibliographystyle{plain}
 
 \end{document}

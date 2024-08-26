@@ -1,0 +1,76 @@
+%! Author = joaopintosp
+%! Date = 8/25/24
+\section{Métodos}\label{sec:metodos}
+
+    \lipsum[6-7]
+
+    \subsection{Git e GitHub}\label{subsec:outrometodo}
+
+    Isto é um novo parágrafo, aqui iremos ver como controlar as versões dos documentos utilizando Git e iremos sincronizar este controlo de versões com o github.
+
+    \subsubsection*{Github}
+
+    Aqui submetemos tudo para o Github.
+
+    \subsection{Equações}\label{subsec:equacoes}
+
+    Com o \LaTeX é muito fácil escrever equações, numerá-las e referênciá-las com uma facilidade enorme.
+    Aqui está um exemplo de uma equação não numerada:
+    \[
+        \phi(1) * \phi(2) = \Phi(f) = \int_{-\infty}^{+\infty}  \phi(t) + \phi(t+\tau) \cdot d\tau
+    \]
+
+    Aqui está o exemplo de uma equação numerada:
+    \begin{equation}\label{eq:classe-c}
+        \phi(t) \in C \, \text{ se } \,
+        \begin{cases}
+            \exists \phi^{(n)} (t) & \forall t,n \\
+            \lim_{t \rightarrow +\infty} \left[t^n \cdot \phi(t)\right] = 0
+        \end{cases}
+    \end{equation}
+
+    \subsection*{Unidades}
+
+    \unit{\m\candela} \par
+    \unit{kg.m.s^{-1}} \par
+    \unit{\kilogram\metre\per\second} \par
+    \unit{\kg\m\per\s} \par
+    \unit[per-mode = symbol]{\kilogram\metre\per\ampere\per\second}\par
+    \unit{\kilo\gram\metre\per\square\second} \par
+    \unit[per-mode = symbol]{\gram\per\cubic\milli\metre} \par
+    \unit{\square\volt\cubic\lumen\per\farad} \par
+    \unit{\metre\squared\per\cubic\lux} \par
+    \unit{\henry\second}
+
+    \subsection*{Números com Unidades}
+
+    \qty{10}{\celsius} \par
+    \qty{10}{\degreeCelsius} \par
+    \qty{1.23}{J.mol^{-1}.K^{-1}} \par
+    \qty{.23e7}{\candela} \par
+    \qty[per-mode = symbol]{1.99}{\per\kilogram} \par
+    \qty[per-mode = fraction]{1,345}{\coulomb\per\mole}
+
+    \pagebreak
+
+    \subsubsection*{Additional macros for numbers with units}
+
+    \qtylist{0.13;0.67;0.80;1}{\milli\metre}\par
+    \numproduct{1.654 x 2.34 x 3.430} \par
+    \qtyproduct{10 x 30 x 45}{\metre} \par
+    \numrange{10}{20} \par
+    \numrange[range-phrase=--]{10}{20} \par
+    \qtyrange{0.13}{0.67}{\milli\metre}
+
+    \subsection{Referir as legendas anteriores}\label{subsec:reference}
+
+    Por exemplo, se eu quiser referir a Figura~\ref{fig:twographs}, posso fazê-lo de forma a criar um link que redireciona à coisa referida.
+
+    No entanto, posso também utilizar o pacote \emph{cleveref} que facilita bastante o processo.
+    Por exemplo, a \cref{fig:figure}.
+    A \cref{eq:classe-c} e \cref{subsec:figuras-e-tabelas}.
+
+\paragraph{Citações} Podemos citar o \textcite{einstein}, da seguinte forma.
+
+Penso que só seja necessário compilar a biblatex caso apareça uma nova citação.
+Afinal não, compila tudo
